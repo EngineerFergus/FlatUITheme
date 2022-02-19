@@ -24,5 +24,7 @@
         <Button x:Name="PurpleButton"
                 Style="{StaticResource PurpleButton}"
                 Content="Click Me"/>
+        <CheckBox x:Name="CheckBox"
+                  Style="{StaticResource BlueSliderCheckBox}"/>
     </StackPanel>
 </UserControl>

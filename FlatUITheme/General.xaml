@@ -3,5 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="src/ColorPallette.xaml"/>
         <ResourceDictionary Source="src/ButtonTemplates.xaml"/>
+        <ResourceDictionary Source="src/CheckBoxTemplates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -6,10 +6,26 @@
         xmlns:local="clr-namespace:ShowCase"
         xmlns:viewmodels="clr-namespace:ShowCase.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowState="Maximized"
+        Title="MainWindow" 
+        Height="450" 
+        Width="800"
+        ResizeMode="NoResize"
         Background="{StaticResource DarkBackgroundBrush}">
     <Grid>
-        <viewmodels:ButtonsView/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border x:Name="SideBorder"
+                Grid.Column="0"
+                BorderBrush="{StaticResource LightBackgroundBrush}"
+                CornerRadius="5"
+                Margin="3"
+                BorderThickness="2">
+            
+        </Border>
+
+        <viewmodels:ButtonsView Grid.Column="1"/>
     </Grid>
 </Window>
