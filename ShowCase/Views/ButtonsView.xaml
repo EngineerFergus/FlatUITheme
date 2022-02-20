@@ -14,9 +14,14 @@
 
     <Grid Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="32"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <CheckBox Name="MainCheckBox"
+                  Style="{StaticResource WhiteSliderCheckBox}"
+                  IsChecked="{Binding IsActivated, Mode=TwoWay}"
+                  Grid.Row="0"/>
 
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal"
@@ -26,16 +31,20 @@
                         MinWidth="100">
                 <Button x:Name="WhiteButton"
                         Style="{StaticResource WhiteButton}"
-                        Content="Click Me"/>
+                        Content="Click Me"
+                        IsEnabled="{Binding IsActivated}"/>
                 <Button x:Name="BlueButton"
                         Style="{StaticResource BlueButton}"
-                        Content="Click Me"/>
+                        Content="Click Me"
+                        IsEnabled="{Binding IsActivated}"/>
                 <Button x:Name="RedButton"
                         Style="{StaticResource RedButton}"
-                        Content="Click Me"/>
+                        Content="Click Me"
+                        IsEnabled="{Binding IsActivated}"/>
                 <Button x:Name="PurpleButton"
                         Style="{StaticResource PurpleButton}"
-                        Content="Click Me"/>
+                        Content="Click Me"
+                        IsEnabled="{Binding IsActivated}"/>
             </StackPanel>
 
             <StackPanel Name="SliderCheckboxesPanel"
@@ -50,16 +59,20 @@
                 </StackPanel.Resources>
                 <CheckBox x:Name="WhiteCheckBox"
                           Style="{StaticResource WhiteSliderCheckBox}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          IsEnabled="{Binding IsActivated}"/>
                 <CheckBox x:Name="BlueCheckBox"
                           Style="{StaticResource BlueSliderCheckBox}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          IsEnabled="{Binding IsActivated}"/>
                 <CheckBox x:Name="RedCheckBox"
                           Style="{StaticResource RedSliderCheckBox}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          IsEnabled="{Binding IsActivated}"/>
                 <CheckBox x:Name="PurpleCheckBox"
                           Style="{StaticResource PurpleSliderCheckBox}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          IsEnabled="{Binding IsActivated}"/>
             </StackPanel>
 
         </StackPanel>
