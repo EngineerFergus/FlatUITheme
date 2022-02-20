@@ -107,5 +107,62 @@
            BasedOn="{StaticResource BlueSliderCheckBox}">
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
-    
+
+    <Style x:Key="BlueCheckBox"
+           TargetType="CheckBox">
+        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"
+                                    Width="15"
+                                    Height="15"
+                                    CornerRadius="3"
+                                    BorderThickness="1"
+                                    BorderBrush="{TemplateBinding Foreground}"
+                                    Background="{TemplateBinding Background}">
+                                <Grid>
+                                    <Path Visibility="Collapsed"
+                                          Width="7"
+                                          Height="7"
+                                          x:Name="CheckMark"
+                                          SnapsToDevicePixels="False"
+                                          StrokeThickness="2"
+                                          Data="M 0 0 L 7 7 M 0 7 L 7 0"
+                                          Stroke="{TemplateBinding Foreground}">
+                                    </Path>
+                                    <Path Visibility="Collapsed"
+                                          Width="7"
+                                          Height="7"
+                                          x:Name="InderminateMark"
+                                          SnapsToDevicePixels="False"
+                                          StrokeThickness="2"
+                                          Data="M 0 7 L 7 0"
+                                          Stroke="{TemplateBinding Foreground}">
+                                    </Path>
+                                </Grid>
+                            </Border>
+                        </BulletDecorator.Bullet>
+
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualState x:Name="Normal"/>
+                            <VisualState x:Name="MouseOver">
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="Border"
+                                                    Storyboard.TargetProperty="Background"/>
+
+                                </Storyboard>
+                            </VisualState>
+                        </VisualStateManager.VisualStateGroups>
+                    </BulletDecorator>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

@@ -9,7 +9,6 @@ namespace ShowCase.ViewModels
 {
     public class ButtonsViewModel : ObservableObject
     {
-
         private bool isActivated;
         public bool IsActivated
         {
@@ -28,6 +27,5 @@ namespace ShowCase.ViewModels
         {
             IsActivated = false;
         }
-
     }
 }
