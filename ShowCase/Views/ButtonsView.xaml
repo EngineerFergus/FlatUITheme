@@ -10,7 +10,7 @@
     <UserControl.DataContext>
         <viewmodels:ButtonsViewModel/>
     </UserControl.DataContext>
-    
+
     <StackPanel MaxWidth="100">
         <Button x:Name="WhiteButton"
                 Style="{StaticResource WhiteButton}"
@@ -24,7 +24,9 @@
         <Button x:Name="PurpleButton"
                 Style="{StaticResource PurpleButton}"
                 Content="Click Me"/>
-        <CheckBox x:Name="CheckBox"
+        <CheckBox x:Name="BlueCheckBox"
                   Style="{StaticResource BlueSliderCheckBox}"/>
+        <CheckBox x:Name="WhiteCheckBox"
+                  Style="{StaticResource WhiteSliderCheckBox}"/>
     </StackPanel>
 </UserControl>

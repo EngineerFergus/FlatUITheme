@@ -6,35 +6,53 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="BlueSliderCheckBox" 
-           TargetType="{x:Type CheckBox}">
+           TargetType="CheckBox">
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
-        <Setter Property="MinWidth" Value="30"/>
-        <Setter Property="MaxWidth" Value="35"/>
+        <Setter Property="Background" Value="{StaticResource DarkForegroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="MinWidth" Value="28"/>
+        <Setter Property="MaxWidth" Value="28"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
-
                     <ControlTemplate.Resources>
                         <Storyboard x:Key="OnChecking">
-                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Thumb"
-                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.0600000" Value="22"/>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                                           Storyboard.TargetName="Thumb"
+                                                           Storyboard.TargetProperty=
+                                                           "(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.0600000" 
+                                                      Value="12"/>
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="OnUnchecking">
-                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="Thumb"
-                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
-                                <SplineDoubleKeyFrame KeyTime="00:00:00.0600000" Value="0"/>
+                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" 
+                                                           Storyboard.TargetName="Thumb"
+                                                           Storyboard.TargetProperty=
+                                                           "(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
+                                <SplineDoubleKeyFrame KeyTime="00:00:00.0600000" 
+                                                      Value="0"/>
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                     </ControlTemplate.Resources>
 
                     <Grid MinWidth="{TemplateBinding MinWidth}">
-                        <Border Margin="1,0,1,0" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3" Height="6.4" BorderBrush="{StaticResource DarkForegroundBrush}"
-                                Background="Transparent" x:Name="RangeBorder" />
+                        <Border Margin="1,0,1,0" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="3" 
+                                Height="6.4" 
+                                BorderBrush="{TemplateBinding Background}"
+                                Background="Transparent" 
+                                x:Name="RangeBorder"/>
 
-                        <Ellipse x:Name="Thumb" Width="16" Height="16" Fill="{TemplateBinding Background}" StrokeThickness="1" HorizontalAlignment="Left">
+                        <Ellipse x:Name="Thumb" 
+                                 Width="16" 
+                                 Height="16" 
+                                 Fill="{TemplateBinding Background}"
+                                 StrokeThickness="1" 
+                                 HorizontalAlignment="Left">
                             <Ellipse.RenderTransform>
                                 <TransformGroup>
                                     <TranslateTransform X="0" Y="0"/>
@@ -43,23 +61,20 @@
                         </Ellipse>
                     </Grid>
 
-
                     <ControlTemplate.Triggers>
-                        <!--You can modify your own style changes here-->
 
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter TargetName="Thumb" Property="Fill" Value="{StaticResource BlueBrush}"/>
-                            <Setter TargetName="RangeBorder" Property="BorderBrush" Value="{StaticResource DarkForegroundBrush}"/>
+                            <Setter TargetName="Thumb" 
+                                    Property="Fill" 
+                                    Value="{Binding RelativeSource={RelativeSource AncestorType=CheckBox}, Path=Foreground}"/>
                             <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource OnUnchecking}" x:Name="OnUnchecking_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource OnUnchecking}" 
+                                                 x:Name="OnUnchecking_BeginStoryboard"/>
                             </Trigger.ExitActions>
                             <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource OnChecking}" x:Name="OnChecking_BeginStoryboard"/>
+                                <BeginStoryboard Storyboard="{StaticResource OnChecking}" 
+                                                 x:Name="OnChecking_BeginStoryboard"/>
                             </Trigger.EnterActions>
-                        </Trigger>
-
-                        <Trigger Property="IsChecked" Value="False">
-                            <Setter TargetName="Thumb" Property="Stroke" Value="{StaticResource DarkForegroundBrush}"/>
                         </Trigger>
 
                         <Trigger Property="IsChecked" Value="{x:Null}">
@@ -74,4 +89,11 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style x:Key="WhiteSliderCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueSliderCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+    
 </ResourceDictionary>
