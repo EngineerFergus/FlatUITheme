@@ -5,28 +5,66 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShowCase.Views"
              xmlns:viewmodels="clr-namespace:ShowCase.ViewModels"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
         <viewmodels:ButtonsViewModel/>
     </UserControl.DataContext>
 
-    <StackPanel MaxWidth="100">
-        <Button x:Name="WhiteButton"
-                Style="{StaticResource WhiteButton}"
-                Content="Click Me"/>
-        <Button x:Name="BlueButton"
-                Style="{StaticResource BlueButton}"
-                Content="Click Me"/>
-        <Button x:Name="RedButton"
-                Style="{StaticResource RedButton}"
-                Content="Click Me"/>
-        <Button x:Name="PurpleButton"
-                Style="{StaticResource PurpleButton}"
-                Content="Click Me"/>
-        <CheckBox x:Name="BlueCheckBox"
-                  Style="{StaticResource BlueSliderCheckBox}"/>
-        <CheckBox x:Name="WhiteCheckBox"
-                  Style="{StaticResource WhiteSliderCheckBox}"/>
-    </StackPanel>
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <StackPanel Name="RegularButtonsPanel"
+                        MinWidth="100">
+                <Button x:Name="WhiteButton"
+                        Style="{StaticResource WhiteButton}"
+                        Content="Click Me"/>
+                <Button x:Name="BlueButton"
+                        Style="{StaticResource BlueButton}"
+                        Content="Click Me"/>
+                <Button x:Name="RedButton"
+                        Style="{StaticResource RedButton}"
+                        Content="Click Me"/>
+                <Button x:Name="PurpleButton"
+                        Style="{StaticResource PurpleButton}"
+                        Content="Click Me"/>
+            </StackPanel>
+
+            <StackPanel Name="SliderCheckboxesPanel"
+                        MinWidth="40">
+                <StackPanel.Resources>
+                    <system:Double x:Key="marginValue">10</system:Double>
+                    <Thickness x:Key="TestMargin" 
+                               Top="{StaticResource marginValue}"
+                               Left="{StaticResource marginValue}"
+                               Bottom="{StaticResource marginValue}"
+                               Right="{StaticResource marginValue}"/>
+                </StackPanel.Resources>
+                <CheckBox x:Name="WhiteCheckBox"
+                          Style="{StaticResource WhiteSliderCheckBox}"
+                          Margin="{StaticResource TestMargin}"/>
+                <CheckBox x:Name="BlueCheckBox"
+                          Style="{StaticResource BlueSliderCheckBox}"
+                          Margin="{StaticResource TestMargin}"/>
+                <CheckBox x:Name="RedCheckBox"
+                          Style="{StaticResource RedSliderCheckBox}"
+                          Margin="{StaticResource TestMargin}"/>
+                <CheckBox x:Name="PurpleCheckBox"
+                          Style="{StaticResource PurpleSliderCheckBox}"
+                          Margin="{StaticResource TestMargin}"/>
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+
+    
 </UserControl>

@@ -11,7 +11,6 @@
         <Setter Property="Background" Value="{StaticResource DarkForegroundBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
         <Setter Property="MinWidth" Value="28"/>
-        <Setter Property="MaxWidth" Value="28"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
@@ -24,7 +23,7 @@
                                                            Storyboard.TargetProperty=
                                                            "(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
                                 <SplineDoubleKeyFrame KeyTime="00:00:00.0600000" 
-                                                      Value="12"/>
+                                                      Value="14"/>
                             </DoubleAnimationUsingKeyFrames>
                         </Storyboard>
                         <Storyboard x:Key="OnUnchecking">
@@ -94,6 +93,18 @@
            TargetType="CheckBox"
            BasedOn="{StaticResource BlueSliderCheckBox}">
         <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedSliderCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueSliderCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleSliderCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueSliderCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
     
 </ResourceDictionary>
