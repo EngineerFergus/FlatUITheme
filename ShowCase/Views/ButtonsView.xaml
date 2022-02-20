@@ -26,7 +26,8 @@
         <StackPanel Grid.Row="1"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                    VerticalAlignment="Center"
+                    Name="MainControlPanel">
             <StackPanel Name="RegularButtonsPanel"
                         MinWidth="100">
                 <Button x:Name="WhiteButton"
