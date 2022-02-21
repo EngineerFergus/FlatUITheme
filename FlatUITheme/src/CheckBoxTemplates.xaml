@@ -148,18 +148,23 @@
                                 </Grid>
                             </Border>
                         </BulletDecorator.Bullet>
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="MouseOver">
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetName="Border"
-                                                    Storyboard.TargetProperty="Background"/>
-
-                                </Storyboard>
-                            </VisualState>
-                        </VisualStateManager.VisualStateGroups>
                     </BulletDecorator>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" Value="{StaticResource DarkForegroundBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
