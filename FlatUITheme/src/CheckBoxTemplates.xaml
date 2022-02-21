@@ -44,7 +44,7 @@
                                 CornerRadius="3" 
                                 Height="6.4" 
                                 BorderBrush="{TemplateBinding Background}"
-                                Background="Transparent" 
+                                Background="{StaticResource DarkBackgroundBrush}" 
                                 x:Name="RangeBorder"/>
 
                         <Ellipse x:Name="Thumb" 
@@ -80,9 +80,14 @@
                         <Trigger Property="IsChecked" Value="{x:Null}">
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
-
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RangeBorder" Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="RangeBorder" Property="Background" Value="{StaticResource DarkForegroundBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -120,8 +125,8 @@
                     <BulletDecorator Background="Transparent">
                         <BulletDecorator.Bullet>
                             <Border x:Name="Border"
-                                    Width="15"
-                                    Height="15"
+                                    Width="16"
+                                    Height="16"
                                     CornerRadius="3"
                                     BorderThickness="1"
                                     BorderBrush="{TemplateBinding Foreground}"
@@ -168,6 +173,24 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="WhiteCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
 </ResourceDictionary>

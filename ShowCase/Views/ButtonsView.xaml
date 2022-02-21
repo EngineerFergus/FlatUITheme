@@ -86,8 +86,22 @@
                                Bottom="{StaticResource marginValue}"
                                Right="{StaticResource marginValue}"/>
                 </StackPanel.Resources>
+                <CheckBox Name="WhiteCheckBox"
+                          Style="{StaticResource WhiteCheckBox}"
+                          IsEnabled="{Binding IsActivated}"
+                          Margin="{StaticResource TestMargin}"/>
                 <CheckBox Name="BlueCheckBox"
-                          Style="{StaticResource BlueCheckBox}"/>
+                          Style="{StaticResource BlueCheckBox}"
+                          IsEnabled="{Binding IsActivated}"
+                          Margin="{StaticResource TestMargin}"/>
+                <CheckBox Name="RedCheckBox"
+                          Style="{StaticResource RedCheckBox}"
+                          IsEnabled="{Binding IsActivated}"
+                          Margin="{StaticResource TestMargin}"/>
+                <CheckBox Name="PurpleCheckBox"
+                          Style="{StaticResource PurpleCheckBox}"
+                          IsEnabled="{Binding IsActivated}"
+                          Margin="{StaticResource TestMargin}"/>
             </StackPanel>
 
         </StackPanel>
