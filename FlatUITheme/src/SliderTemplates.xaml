@@ -110,11 +110,11 @@
                 <Setter Property="MinHeight" Value="21" />
                 <Setter Property="Template" Value="{StaticResource ColoredHorizontalSlider}" />
             </Trigger>
-            <!--<Trigger Property="Orientation" Value="Vertical">
+            <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="MinWidth" Value="21" />
                 <Setter Property="MinHeight" Value="104" />
-                <Setter Property="Template" Value="{StaticResource VerticalSlider}" />
-            </Trigger>-->
+                <Setter Property="Template" Value="{StaticResource ColoredHorizontalSlider}" />
+            </Trigger>
         </Style.Triggers>
     </Style>
 
