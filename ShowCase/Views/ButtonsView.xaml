@@ -107,13 +107,19 @@
             <StackPanel Name="SlidersPanel"
                         MinWidth="100">
                 <StackPanel.Resources>
-                    <system:Double x:Key="marginValue">10</system:Double>
+                    <system:Double x:Key="marginValue">7</system:Double>
                     <Thickness x:Key="TestMargin" 
                                Top="{StaticResource marginValue}"
                                Left="{StaticResource marginValue}"
                                Bottom="{StaticResource marginValue}"
                                Right="{StaticResource marginValue}"/>
                 </StackPanel.Resources>
+
+                <Slider Style="{StaticResource BlueSlider}"
+                        Width="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"/>
+
             </StackPanel>
 
         </StackPanel>

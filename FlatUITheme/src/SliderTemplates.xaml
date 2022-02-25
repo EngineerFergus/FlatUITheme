@@ -12,25 +12,25 @@
         <Setter Property="Focusable" Value="false" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                <ControlTemplate TargetType="RepeatButton">
                     <Border Background="Transparent" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="BlueSliderThumbStyle"
+    <Style x:Key="GeneralSliderThumbStyle"
        TargetType="Thumb">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="Height" Value="16" />
         <Setter Property="Width" Value="16" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Thumb}">
+                <ControlTemplate TargetType="Thumb">
                     <Ellipse x:Name="Ellipse"
                              StrokeThickness="1"
-                             Stroke="{StaticResource BlueBrush}"
-                             Fill="{StaticResource BlueBrush}">
+                             Stroke="{TemplateBinding Foreground}"
+                             Fill="{TemplateBinding Foreground}">
                     </Ellipse>
                 </ControlTemplate>
             </Setter.Value>
@@ -43,7 +43,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"
-                     MinHeight="{TemplateBinding MinHeight}" />
+                               MinHeight="{TemplateBinding MinHeight}" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <TickBar x:Name="TopTick"
@@ -51,7 +51,7 @@
                      Placement="Top"
                      Height="4"
                      Visibility="Collapsed"
-                     Fill="{StaticResource BlueBrush}">
+                     Fill="{StaticResource DarkForegroundBrush}">
             </TickBar>
             <Border x:Name="TrackBackground"
                     Margin="0"
@@ -60,7 +60,7 @@
                     Grid.Row="1"
                     BorderThickness="1"
                     BorderBrush="{StaticResource DarkForegroundBrush}"
-                    Background="{StaticResource DarkBackgroundBrush}">
+                    Background="{TemplateBinding Background}">
             </Border>
             <Track Grid.Row="1"
                    x:Name="PART_Track">
@@ -69,7 +69,8 @@
                                   Command="Slider.DecreaseLarge" />
                 </Track.DecreaseRepeatButton>
                 <Track.Thumb>
-                    <Thumb Style="{StaticResource BlueSliderThumbStyle}" />
+                    <Thumb Style="{StaticResource GeneralSliderThumbStyle}" 
+                           Foreground="{TemplateBinding Foreground}"/>
                 </Track.Thumb>
                 <Track.IncreaseRepeatButton>
                     <RepeatButton Style="{StaticResource SliderButtonStyle}"
@@ -92,18 +93,22 @@
             <Trigger Property="TickPlacement" Value="BottomRight">
                 <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
             </Trigger>
-            
+
             <Trigger Property="TickPlacement" Value="Both">
                 <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
                 <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
             </Trigger>
+
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="Slider"
-           x:Name="BlueHorizontalSlider">
+           x:Key="BlueSlider">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Style.Triggers>
             <Trigger Property="Orientation" Value="Horizontal">
                 <Setter Property="MinWidth" Value="104" />
@@ -114,6 +119,12 @@
                 <Setter Property="MinWidth" Value="21" />
                 <Setter Property="MinHeight" Value="104" />
                 <Setter Property="Template" Value="{StaticResource ColoredHorizontalSlider}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>
