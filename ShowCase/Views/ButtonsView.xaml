@@ -153,28 +153,32 @@
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
-                        TickPlacement="TopLeft"/>
+                        TickPlacement="TopLeft"
+                        IsSnapToTickEnabled="True"/>
 
                 <Slider Style="{StaticResource BlueSlider}"
                         Height="50"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
-                        TickPlacement="TopLeft"/>
+                        TickPlacement="TopLeft"
+                        IsSnapToTickEnabled="True"/>
 
                 <Slider Style="{StaticResource RedSlider}"
                         Height="50"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
-                        TickPlacement="BottomRight"/>
+                        TickPlacement="BottomRight"
+                        IsSnapToTickEnabled="True"/>
 
                 <Slider Style="{StaticResource PurpleSlider}"
                         Height="50"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
-                        TickPlacement="Both"/>
+                        TickPlacement="Both"
+                        IsSnapToTickEnabled="True"/>
 
             </StackPanel>
 
