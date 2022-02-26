@@ -81,7 +81,7 @@
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
-                            <Setter Property="Opacity" Value="0.5" />
+                            <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="RangeBorder" Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
