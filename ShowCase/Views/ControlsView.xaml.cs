@@ -18,9 +18,9 @@ namespace ShowCase.Views
     /// <summary>
     /// Interaction logic for ButtonsView.xaml
     /// </summary>
-    public partial class ButtonsView : UserControl
+    public partial class ControlsView : UserControl
     {
-        public ButtonsView()
+        public ControlsView()
         {
             InitializeComponent();
         }

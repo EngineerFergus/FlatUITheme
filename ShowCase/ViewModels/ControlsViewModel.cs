@@ -7,7 +7,7 @@ using ShowCase.Core;
 
 namespace ShowCase.ViewModels
 {
-    public class ButtonsViewModel : ObservableObject
+    public class ControlsViewModel : ObservableObject
     {
         private bool isActivated;
         public bool IsActivated
@@ -23,7 +23,7 @@ namespace ShowCase.ViewModels
             }
         }
 
-        public ButtonsViewModel()
+        public ControlsViewModel()
         {
             IsActivated = false;
         }
