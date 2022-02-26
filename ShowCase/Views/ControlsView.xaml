@@ -28,6 +28,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Name="MainControlPanel">
+            
             <StackPanel Name="RegularButtonsPanel"
                         MinWidth="100">
                 <Button x:Name="WhiteButton"
@@ -89,19 +90,55 @@
                 <CheckBox Name="WhiteCheckBox"
                           Style="{StaticResource WhiteCheckBox}"
                           IsEnabled="{Binding IsActivated}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          Content="W"/>
                 <CheckBox Name="BlueCheckBox"
                           Style="{StaticResource BlueCheckBox}"
                           IsEnabled="{Binding IsActivated}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          Content="B"/>
                 <CheckBox Name="RedCheckBox"
                           Style="{StaticResource RedCheckBox}"
                           IsEnabled="{Binding IsActivated}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          Content="R"/>
                 <CheckBox Name="PurpleCheckBox"
                           Style="{StaticResource PurpleCheckBox}"
                           IsEnabled="{Binding IsActivated}"
-                          Margin="{StaticResource TestMargin}"/>
+                          Margin="{StaticResource TestMargin}"
+                          Content="P"/>
+            </StackPanel>
+
+            <StackPanel Name="RadioButtonsPanel"
+                        MinWidth="40">
+                <StackPanel.Resources>
+                    <system:Double x:Key="marginValue">6</system:Double>
+                    <Thickness x:Key="TestMargin" 
+                               Top="{StaticResource marginValue}"
+                               Left="{StaticResource marginValue}"
+                               Bottom="{StaticResource marginValue}"
+                               Right="{StaticResource marginValue}"/>
+                </StackPanel.Resources>
+                <RadioButton Name="WhiteRadioButton"
+                             Style="{StaticResource WhiteRadioButton}"
+                             IsEnabled="{Binding IsActivated}"
+                             Content="W"
+                             Margin="{StaticResource TestMargin}"/>
+                <RadioButton Name="BlueRadioButton"
+                             Style="{StaticResource BlueRadioButton}"
+                             IsEnabled="{Binding IsActivated}"
+                             Content="B"
+                             Margin="{StaticResource TestMargin}"/>
+                <RadioButton Name="RedRadioButton"
+                             Style="{StaticResource RedRadioButton}"
+                             IsEnabled="{Binding IsActivated}"
+                             Content="R"
+                             Margin="{StaticResource TestMargin}"/>
+                <RadioButton Name="PurpleRadioButton"
+                             Style="{StaticResource PurpleRadioButton}"
+                             IsEnabled="{Binding IsActivated}"
+                             Content="P"
+                             Margin="{StaticResource TestMargin}"/>
             </StackPanel>
 
             <StackPanel Name="HorizontalSlidersPanel"
