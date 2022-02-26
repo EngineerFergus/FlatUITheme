@@ -104,10 +104,10 @@
                           Margin="{StaticResource TestMargin}"/>
             </StackPanel>
 
-            <StackPanel Name="SlidersPanel"
+            <StackPanel Name="HorizontalSlidersPanel"
                         MinWidth="100">
                 <StackPanel.Resources>
-                    <system:Double x:Key="marginValue">7</system:Double>
+                    <system:Double x:Key="marginValue">7.4</system:Double>
                     <Thickness x:Key="TestMargin" 
                                Top="{StaticResource marginValue}"
                                Left="{StaticResource marginValue}"
@@ -115,10 +115,66 @@
                                Right="{StaticResource marginValue}"/>
                 </StackPanel.Resources>
 
+                <Slider Style="{StaticResource WhiteSlider}"
+                        Width="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"/>
+
                 <Slider Style="{StaticResource BlueSlider}"
                         Width="50"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"/>
+
+                <Slider Style="{StaticResource RedSlider}"
+                        Width="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"/>
+                
+                <Slider Style="{StaticResource PurpleSlider}"
+                        Width="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"/>
+
+            </StackPanel>
+
+            <StackPanel Name="VerticalSlidersPanel"
+                        Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <system:Double x:Key="marginValue">7.4</system:Double>
+                    <Thickness x:Key="TestMargin" 
+                               Top="{StaticResource marginValue}"
+                               Left="{StaticResource marginValue}"
+                               Bottom="{StaticResource marginValue}"
+                               Right="{StaticResource marginValue}"/>
+                </StackPanel.Resources>
+
+                <Slider Style="{StaticResource WhiteSlider}"
+                        Height="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"
+                        Orientation="Vertical"
+                        TickPlacement="TopLeft"/>
+
+                <Slider Style="{StaticResource BlueSlider}"
+                        Height="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"
+                        Orientation="Vertical"
+                        TickPlacement="TopLeft"/>
+
+                <Slider Style="{StaticResource RedSlider}"
+                        Height="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"
+                        Orientation="Vertical"
+                        TickPlacement="BottomRight"/>
+
+                <Slider Style="{StaticResource PurpleSlider}"
+                        Height="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"
+                        Orientation="Vertical"
+                        TickPlacement="Both"/>
 
             </StackPanel>
 

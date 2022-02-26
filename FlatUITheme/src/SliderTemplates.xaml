@@ -10,10 +10,11 @@
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="IsTabStop" Value="false" />
         <Setter Property="Focusable" Value="false" />
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Border Background="Transparent" />
+                    <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -51,7 +52,7 @@
                      Placement="Top"
                      Height="4"
                      Visibility="Collapsed"
-                     Fill="{StaticResource DarkForegroundBrush}">
+                     Fill="{TemplateBinding Foreground}">
             </TickBar>
             <Border x:Name="TrackBackground"
                     Margin="0"
@@ -89,7 +90,7 @@
             <Trigger Property="TickPlacement" Value="TopLeft">
                 <Setter TargetName="TopTick" Property="Visibility" Value="Visible" />
             </Trigger>
-            
+
             <Trigger Property="TickPlacement" Value="BottomRight">
                 <Setter TargetName="BottomTick" Property="Visibility" Value="Visible" />
             </Trigger>
@@ -102,10 +103,74 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="ColoredVerticalSlider"
+                     TargetType="Slider">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"
+                               MinWidth="{TemplateBinding MinWidth}" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TickBar x:Name="LeftTick"
+                     SnapsToDevicePixels="True"
+                     Placement="Left"
+                     Width="4"
+                     Visibility="Collapsed"
+                     Fill="{TemplateBinding Foreground}">
+            </TickBar>
+            <Border x:Name="TrackBackground"
+                    Margin="0"
+                    CornerRadius="2"
+                    Width="4"
+                    Grid.Column="1"
+                    BorderThickness="1"
+                    BorderBrush="{StaticResource DarkForegroundBrush}"
+                    Background="{TemplateBinding Background}">
+            </Border>
+            <Track Grid.Column="1"
+                   x:Name="PART_Track">
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderButtonStyle}"
+                                  Command="Slider.DecreaseLarge" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource GeneralSliderThumbStyle}" 
+                           Foreground="{TemplateBinding Foreground}"/>
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderButtonStyle}"
+                                  Command="Slider.IncreaseLarge" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+            <TickBar x:Name="RightTick"
+                     SnapsToDevicePixels="True"
+                     Grid.Column="2"
+                     Fill="{TemplateBinding Foreground}"
+                     Placement="Right"
+                     Width="4"
+                     Visibility="Collapsed" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="TickPlacement" Value="TopLeft">
+                <Setter TargetName="LeftTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="BottomRight">
+                <Setter TargetName="RightTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+            <Trigger Property="TickPlacement" Value="Both">
+                <Setter TargetName="LeftTick" Property="Visibility" Value="Visible" />
+                <Setter TargetName="RightTick" Property="Visibility" Value="Visible" />
+            </Trigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Style TargetType="Slider"
            x:Key="BlueSlider">
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="SnapsToDevicePixels" Value="False"/>
         <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -118,7 +183,7 @@
             <Trigger Property="Orientation" Value="Vertical">
                 <Setter Property="MinWidth" Value="21" />
                 <Setter Property="MinHeight" Value="104" />
-                <Setter Property="Template" Value="{StaticResource ColoredHorizontalSlider}" />
+                <Setter Property="Template" Value="{StaticResource ColoredVerticalSlider}" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
@@ -127,6 +192,24 @@
                 <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Slider"
+           x:Key="WhiteSlider"
+           BasedOn="{StaticResource BlueSlider}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style TargetType="Slider"
+           x:Key="RedSlider"
+           BasedOn="{StaticResource BlueSlider}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style TargetType="Slider"
+           x:Key="PurpleSlider"
+           BasedOn="{StaticResource BlueSlider}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
 </ResourceDictionary>
