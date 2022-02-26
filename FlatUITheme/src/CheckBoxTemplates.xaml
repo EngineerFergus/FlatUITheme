@@ -117,6 +117,7 @@
            TargetType="CheckBox">
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
@@ -153,6 +154,10 @@
                                 </Grid>
                             </Border>
                         </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="4,0,0,0"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Left"
+                                          RecognizesAccessKey="True" />
                     </BulletDecorator>
 
                     <ControlTemplate.Triggers>
