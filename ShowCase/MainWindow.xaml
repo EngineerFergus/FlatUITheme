@@ -23,7 +23,9 @@
                 CornerRadius="5"
                 Margin="3"
                 BorderThickness="2">
-
+            <RadioButton x:Name="Test"
+                         Content="Controls"
+                         Style="{StaticResource BlueLabelRadioButton}"/>
         </Border>
 
         <views:ControlsView Grid.Column="1"/>

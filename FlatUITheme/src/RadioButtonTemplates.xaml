@@ -88,4 +88,24 @@
         <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
     </Style>
 
+    <Style x:Key="BlueLabelRadioButton"
+           TargetType="RadioButton">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <ContentPresenter VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      Margin="4,0,0,0"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>
