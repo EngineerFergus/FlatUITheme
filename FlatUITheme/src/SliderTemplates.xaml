@@ -212,4 +212,10 @@
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
+    <Style TargetType="Slider"
+           x:Key="GreenSlider"
+           BasedOn="{StaticResource BlueSlider}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
 </ResourceDictionary>

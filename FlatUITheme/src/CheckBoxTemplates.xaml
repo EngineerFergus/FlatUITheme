@@ -113,6 +113,12 @@
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
+    <Style x:Key="GreenSliderCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueSliderCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
     <Style x:Key="BlueCheckBox"
            TargetType="CheckBox">
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
@@ -196,6 +202,12 @@
            TargetType="CheckBox"
            BasedOn="{StaticResource BlueCheckBox}">
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenCheckBox"
+           TargetType="CheckBox"
+           BasedOn="{StaticResource BlueCheckBox}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
     </Style>
 
 </ResourceDictionary>

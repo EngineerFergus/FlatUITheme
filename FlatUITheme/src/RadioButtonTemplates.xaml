@@ -82,4 +82,10 @@
         <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
+    <Style x:Key="GreenRadioButton"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BlueRadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
 </ResourceDictionary>

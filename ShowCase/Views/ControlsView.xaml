@@ -39,6 +39,10 @@
                         Style="{StaticResource BlueButton}"
                         Content="Click Me"
                         IsEnabled="{Binding IsActivated}"/>
+                <Button x:Name="GreenButton"
+                        Style="{StaticResource GreenButton}"
+                        Content="Click Me"
+                        IsEnabled="{Binding IsActivated}"/>
                 <Button x:Name="RedButton"
                         Style="{StaticResource RedButton}"
                         Content="Click Me"
@@ -65,6 +69,10 @@
                           IsEnabled="{Binding IsActivated}"/>
                 <CheckBox x:Name="BlueSliderCheckBox"
                           Style="{StaticResource BlueSliderCheckBox}"
+                          Margin="{StaticResource TestMargin}"
+                          IsEnabled="{Binding IsActivated}"/>
+                <CheckBox x:Name="GreenSliderCheckBox"
+                          Style="{StaticResource GreenSliderCheckBox}"
                           Margin="{StaticResource TestMargin}"
                           IsEnabled="{Binding IsActivated}"/>
                 <CheckBox x:Name="RedSliderCheckBox"
@@ -97,6 +105,11 @@
                           IsEnabled="{Binding IsActivated}"
                           Margin="{StaticResource TestMargin}"
                           Content="B"/>
+                <CheckBox Name="GreenCheckBox"
+                          Style="{StaticResource GreenCheckBox}"
+                          IsEnabled="{Binding IsActivated}"
+                          Margin="{StaticResource TestMargin}"
+                          Content="G"/>
                 <CheckBox Name="RedCheckBox"
                           Style="{StaticResource RedCheckBox}"
                           IsEnabled="{Binding IsActivated}"
@@ -128,6 +141,11 @@
                              Style="{StaticResource BlueRadioButton}"
                              IsEnabled="{Binding IsActivated}"
                              Content="B"
+                             Margin="{StaticResource TestMargin}"/>
+                <RadioButton Name="GreenRadioButton"
+                             Style="{StaticResource GreenRadioButton}"
+                             IsEnabled="{Binding IsActivated}"
+                             Content="G"
                              Margin="{StaticResource TestMargin}"/>
                 <RadioButton Name="RedRadioButton"
                              Style="{StaticResource RedRadioButton}"
@@ -162,6 +180,11 @@
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"/>
 
+                <Slider Style="{StaticResource GreenSlider}"
+                        Width="50"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"/>
+
                 <Slider Style="{StaticResource RedSlider}"
                         Width="50"
                         Margin="{StaticResource TestMargin}"
@@ -175,9 +198,11 @@
             </StackPanel>
 
             <StackPanel Name="VerticalSlidersPanel"
-                        Orientation="Horizontal">
+                        Orientation="Horizontal"
+                        MinHeight="100">
                 <StackPanel.Resources>
                     <system:Double x:Key="marginValue">7.4</system:Double>
+                    <system:Double x:Key="Height">140</system:Double>
                     <Thickness x:Key="TestMargin" 
                                Top="{StaticResource marginValue}"
                                Left="{StaticResource marginValue}"
@@ -186,7 +211,7 @@
                 </StackPanel.Resources>
 
                 <Slider Style="{StaticResource WhiteSlider}"
-                        Height="50"
+                        Height="{StaticResource Height}"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
@@ -194,15 +219,23 @@
                         IsSnapToTickEnabled="True"/>
 
                 <Slider Style="{StaticResource BlueSlider}"
-                        Height="50"
+                        Height="{StaticResource Height}"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
                         TickPlacement="TopLeft"
                         IsSnapToTickEnabled="True"/>
 
+                <Slider Style="{StaticResource GreenSlider}"
+                        Height="{StaticResource Height}"
+                        Margin="{StaticResource TestMargin}"
+                        IsEnabled="{Binding IsActivated}"
+                        Orientation="Vertical"
+                        TickPlacement="BottomRight"
+                        IsSnapToTickEnabled="True"/>
+
                 <Slider Style="{StaticResource RedSlider}"
-                        Height="50"
+                        Height="{StaticResource Height}"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
@@ -210,7 +243,7 @@
                         IsSnapToTickEnabled="True"/>
 
                 <Slider Style="{StaticResource PurpleSlider}"
-                        Height="50"
+                        Height="{StaticResource Height}"
                         Margin="{StaticResource TestMargin}"
                         IsEnabled="{Binding IsActivated}"
                         Orientation="Vertical"
