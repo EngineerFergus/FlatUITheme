@@ -89,20 +89,48 @@
     </Style>
 
     <Style x:Key="BlueLabelRadioButton"
-           TargetType="RadioButton">
+           TargetType="RadioButton"
+           BasedOn="{StaticResource {x:Type ToggleButton}}">
         <Setter Property="FontSize" Value="18"/>
-        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <ContentPresenter VerticalAlignment="Center"
-                                      HorizontalAlignment="Left"
-                                      Margin="4,0,0,0"/>
+                    <Grid VerticalAlignment="Stretch"
+                          HorizontalAlignment="Stretch"
+                          Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="5"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   Text="{TemplateBinding Property=Content}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   Margin="10,5,5,5"/>
+                        <Rectangle x:Name="ActiveBar"
+                                   Grid.Column="1"
+                                   Fill="Transparent"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="ActiveBar" Property="Fill" Value="{Binding RelativeSource={RelativeSource AncestorType=RadioButton}, Path=Foreground}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource DarkForegroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
             </Trigger>
         </Style.Triggers>
