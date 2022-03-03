@@ -11,6 +11,9 @@
         Width="800"
         ResizeMode="NoResize"
         Background="{StaticResource DarkBackgroundBrush}">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -26,7 +29,7 @@
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Top">
                 <TextBlock x:Name="CompanyBar"
-                           Text="Company"
+                           Text="UI Theme"
                            FontSize="24"
                            Foreground="{StaticResource LightForegroundBrush}"
                            Margin="5,5,5,10"
@@ -42,8 +45,8 @@
                 <RadioButton x:Name="MenusMenuButton"
                          Content="Menus"
                          Style="{StaticResource GreenLabelRadioButton}"/>
-                <RadioButton x:Name="EmptyMenuButtonOne"
-                         Content="Empty"
+                <RadioButton x:Name="ChartsMenuButton"
+                         Content="Charts"
                          Style="{StaticResource RedLabelRadioButton}"/>
                 <RadioButton x:Name="EmptyMenuButtonTwo"
                          Content="Empty"
@@ -51,7 +54,9 @@
             </StackPanel>
         </Border>
 
-        <views:ControlsView Grid.Column="1"/>
-
+        <views:ControlsView Grid.Column="1"
+                            Visibility="{Binding ElementName=ControlsMenuButton,
+                            Path=IsChecked, 
+                            Converter={StaticResource BooleanToVisibilityConverter}}"/>
     </Grid>
 </Window>
