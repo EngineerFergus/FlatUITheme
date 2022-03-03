@@ -91,7 +91,7 @@
     <Style x:Key="BlueLabelRadioButton"
            TargetType="RadioButton"
            BasedOn="{StaticResource {x:Type ToggleButton}}">
-        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontSize" Value="20"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
@@ -133,7 +133,35 @@
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="{StaticResource LightBackgroundBrush}"/>
             </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource DarkForegroundBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource LightBackgroundBrush}"/>
+            </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="WhiteLabelRadioButton"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BlueLabelRadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedLabelRadioButton"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BlueLabelRadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenLabelRadioButton"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BlueLabelRadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleLabelRadioButton"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BlueLabelRadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
     </Style>
 
 </ResourceDictionary>

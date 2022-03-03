@@ -33,15 +33,21 @@
                            HorizontalAlignment="Center"
                            FontWeight="Bold"
                            Visibility="Visible"/>
-                <RadioButton x:Name="MenuButtonOne"
+                <RadioButton x:Name="ControlsMenuButton"
                          Content="Controls"
-                         Style="{StaticResource BlueLabelRadioButton}"/>
-                <RadioButton x:Name="MenuButtonTwo"
+                         Style="{StaticResource WhiteLabelRadioButton}"/>
+                <RadioButton x:Name="TextsMenuButton"
                          Content="Texts"
                          Style="{StaticResource BlueLabelRadioButton}"/>
-                <RadioButton x:Name="MenuButtonThree"
+                <RadioButton x:Name="MenusMenuButton"
                          Content="Menus"
-                         Style="{StaticResource BlueLabelRadioButton}"/>
+                         Style="{StaticResource GreenLabelRadioButton}"/>
+                <RadioButton x:Name="EmptyMenuButtonOne"
+                         Content="Empty"
+                         Style="{StaticResource RedLabelRadioButton}"/>
+                <RadioButton x:Name="EmptyMenuButtonTwo"
+                         Content="Empty"
+                         Style="{StaticResource PurpleLabelRadioButton}"/>
             </StackPanel>
         </Border>
 
