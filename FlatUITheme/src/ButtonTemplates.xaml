@@ -21,7 +21,9 @@
                             BorderBrush="{TemplateBinding Foreground}" 
                             BorderThickness="1"
                             CornerRadius="3">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="5,0,5,0"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

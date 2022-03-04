@@ -1,0 +1,139 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="ColorPallette.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BlueHeaderBlockOne"
+           TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style x:Key="WhiteHeaderBlockOne"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockOne}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedHeaderBlockOne"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockOne}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenHeaderBlockOne"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockOne}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleHeaderBlockOne"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockOne}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="BlueHeaderBlockTwo"
+           TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style x:Key="WhiteHeaderBlockTwo"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockTwo}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedHeaderBlockTwo"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockTwo}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+    
+    <Style x:Key="GreenHeaderBlockTwo"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockTwo}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleHeaderBlockTwo"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueHeaderBlockTwo}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="BlueTextBlock"
+           TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style x:Key="WhiteTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
+    <Style x:Key="BlueSmallTextBlock"
+           TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Light"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style x:Key="WhiteSmallTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueSmallTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="RedSmallTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueSmallTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenSmallTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueSmallTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleSmallTextBlock"
+           TargetType="TextBlock"
+           BasedOn="{StaticResource BlueSmallTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
+</ResourceDictionary>
