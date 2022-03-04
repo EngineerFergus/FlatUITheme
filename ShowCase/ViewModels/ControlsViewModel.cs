@@ -25,7 +25,7 @@ namespace ShowCase.ViewModels
 
         public ControlsViewModel()
         {
-            IsActivated = false;
+            IsActivated = true;
         }
     }
 }
