@@ -5,3 +5,4 @@ Interfaces are important. They represent the points where two systems, entities,
 - [UI Reference 2](https://www.bing.com/images/search?view=detailV2&ccid=gLmWx1hj&id=97712729C8CCE8904D0E0041AC84E4990C7267EA&thid=OIP.gLmWx1hjR90hgNdAu5_5GQHaFj&mediaurl=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fec%2F54%2F80%2Fec5480485317cd0dbb1d4b42f201e91b.png&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.80b996c7586347dd2180d740bb9ff919%3Frik%3D6mdyDJnkhKxBAA%26pid%3DImgRaw%26r%3D0&exph=900&expw=1200&q=user+interface+colors&form=IRPRST&ck=A4D7EB319C97215DAD754E7EEFBD5DB4&selectedindex=1&ajaxhist=0&ajaxserp=0&vt=2&sim=11)
 - [Slider Checkbox](https://stackoverflow.com/questions/56615366/slider-button-checkbox-using-controltemplate-with-slider-click-doesnt-chan)
 - [Attached Properties](https://stackoverflow.com/questions/3188582/template-binding-to-background-and-foreground-colors)
+- [Modern Flat UI Video](https://www.youtube.com/watch?v=PzP8mw7JUzI&t=1169s)
