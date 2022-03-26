@@ -7,5 +7,6 @@
         <ResourceDictionary Source="src/SliderTemplates.xaml"/>
         <ResourceDictionary Source="src/RadioButtonTemplates.xaml"/>
         <ResourceDictionary Source="src/TextblockTemplates.xaml"/>
+        <ResourceDictionary Source="src/TextboxTemplates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
