@@ -9,6 +9,7 @@
         <Setter Property="Foreground" Value="{StaticResource BlueBrush}"/>
         <Setter Property="Background" Value="{StaticResource DarkBackgroundBrush}"/>
         <Setter Property="CaretBrush" Value="{StaticResource DarkForegroundBrush}"/>
+        <Setter Property="Margin" Value="5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -17,8 +18,10 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding Foreground}"
                             BorderThickness="1"
-                            MaxWidth="300"
+                            MinWidth="200"
+                            MaxWidth="200"
                             MaxHeight="40"
+                            MinHeight="40"
                             Height="40">
                         <Grid>
                             <TextBox Name="SearchBox"
@@ -65,5 +68,30 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="WhiteSearchBar"
+           TargetType="TextBox"
+           BasedOn="{StaticResource BlueSearchBar}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenSearchBar"
+           TargetType="TextBox"
+           BasedOn="{StaticResource BlueSearchBar}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="RedSearchBar"
+           TargetType="TextBox"
+           BasedOn="{StaticResource BlueSearchBar}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleSearchBar"
+           TargetType="TextBox"
+           BasedOn="{StaticResource BlueSearchBar}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
     
+
 </ResourceDictionary>
