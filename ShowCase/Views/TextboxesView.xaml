@@ -4,15 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShowCase.Views"
+             xmlns:flat="clr-namespace:FlatUITheme.src;assembly=FlatUITheme"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                MaxWidth="250">
-        <TextBox Style="{StaticResource WhiteSearchBar}"/>
-        <TextBox Style="{StaticResource BlueSearchBar}"/>
-        <TextBox Style="{StaticResource GreenSearchBar}"/>
-        <TextBox Style="{StaticResource RedSearchBar}"/>
-        <TextBox Style="{StaticResource PurpleSearchBar}"/>
+    <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    MaxWidth="250">
+            <TextBox Style="{StaticResource WhiteSearchBar}"/>
+            <TextBox Style="{StaticResource BlueSearchBar}"/>
+            <TextBox Style="{StaticResource GreenSearchBar}"/>
+            <TextBox Style="{StaticResource RedSearchBar}"/>
+            <TextBox Style="{StaticResource PurpleSearchBar}"/>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    MaxWidth="250">
+            <flat:CustomTextBox Style="{StaticResource BlueTextBox}"
+                                DefaultText="Custom Text"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>
