@@ -4,34 +4,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ShowCase.Views"
+             xmlns:viewmodels="clr-namespace:ShowCase.ViewModels"
              xmlns:flat="clr-namespace:FlatUITheme.src;assembly=FlatUITheme"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Horizontal"
+    <UserControl.DataContext>
+        <viewmodels:TextBoxesViewModel/>
+    </UserControl.DataContext>
+    <StackPanel Orientation="Vertical"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
-        <StackPanel VerticalAlignment="Center"
+        <CheckBox Name="MainCheckBox"
+                  Style="{StaticResource GreenSliderCheckBox}"
+                  IsChecked="{Binding IsActivated}"/>
+        <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     MaxWidth="250">
-            <TextBox Style="{StaticResource WhiteSearchBar}"/>
-            <TextBox Style="{StaticResource BlueSearchBar}"/>
-            <TextBox Style="{StaticResource GreenSearchBar}"/>
-            <TextBox Style="{StaticResource RedSearchBar}"/>
-            <TextBox Style="{StaticResource PurpleSearchBar}"/>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Center"
+                <TextBox Style="{StaticResource WhiteSearchBar}"
+                         IsEnabled="{Binding IsActivated}"/>
+                <TextBox Style="{StaticResource BlueSearchBar}"
+                         IsEnabled="{Binding IsActivated}"/>
+                <TextBox Style="{StaticResource GreenSearchBar}"
+                         IsEnabled="{Binding IsActivated}"/>
+                <TextBox Style="{StaticResource RedSearchBar}"
+                         IsEnabled="{Binding IsActivated}"/>
+                <TextBox Style="{StaticResource PurpleSearchBar}"
+                         IsEnabled="{Binding IsActivated}"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     MaxWidth="250">
-            <flat:CustomTextBox Style="{StaticResource WhiteTextBox}"
-                                DefaultText="Raft Search"/>
-            <flat:CustomTextBox Style="{StaticResource BlueTextBox}"
-                                DefaultText="Custom Text"/>
-            <flat:CustomTextBox Style="{StaticResource GreenTextBox}"
-                                DefaultText="Hello"/>
-            <flat:CustomTextBox Style="{StaticResource RedTextBox}"
-                                DefaultText="From The"/>
-            <flat:CustomTextBox Style="{StaticResource PurpleTextBox}"
-                                DefaultText="Other Side"/>
+                <flat:CustomTextBox Style="{StaticResource WhiteTextBox}"
+                                    DefaultText="Raft Search"
+                                    IsEnabled="{Binding IsActivated}"/>
+                <flat:CustomTextBox Style="{StaticResource BlueTextBox}"
+                                    DefaultText="Custom Text"
+                                    IsEnabled="{Binding IsActivated}"/>
+                <flat:CustomTextBox Style="{StaticResource GreenTextBox}"
+                                    DefaultText="Hello"
+                                    IsEnabled="{Binding IsActivated}"/>
+                <flat:CustomTextBox Style="{StaticResource RedTextBox}"
+                                    DefaultText="From The"
+                                    IsEnabled="{Binding IsActivated}"/>
+                <flat:CustomTextBox Style="{StaticResource PurpleTextBox}"
+                                    DefaultText="Other Side"
+                                    IsEnabled="{Binding IsActivated}"/>
+            </StackPanel>
         </StackPanel>
     </StackPanel>
+    
 </UserControl>
