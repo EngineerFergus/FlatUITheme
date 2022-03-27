@@ -22,8 +22,16 @@
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     MaxWidth="250">
+            <flat:CustomTextBox Style="{StaticResource WhiteTextBox}"
+                                DefaultText="Raft Search"/>
             <flat:CustomTextBox Style="{StaticResource BlueTextBox}"
                                 DefaultText="Custom Text"/>
+            <flat:CustomTextBox Style="{StaticResource GreenTextBox}"
+                                DefaultText="Hello"/>
+            <flat:CustomTextBox Style="{StaticResource RedTextBox}"
+                                DefaultText="From The"/>
+            <flat:CustomTextBox Style="{StaticResource PurpleTextBox}"
+                                DefaultText="Other Side"/>
         </StackPanel>
     </StackPanel>
 </UserControl>

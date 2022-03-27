@@ -159,4 +159,28 @@
         </Style.Triggers>
     </Style>
 
+    <Style x:Key="WhiteTextBox"
+           TargetType="local:CustomTextBox"
+           BasedOn="{StaticResource BlueTextBox}">
+        <Setter Property="Foreground" Value="{StaticResource LightForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="GreenTextBox"
+           TargetType="local:CustomTextBox"
+           BasedOn="{StaticResource BlueTextBox}">
+        <Setter Property="Foreground" Value="{StaticResource GreenBrush}"/>
+    </Style>
+
+    <Style x:Key="RedTextBox"
+           TargetType="local:CustomTextBox"
+           BasedOn="{StaticResource BlueTextBox}">
+        <Setter Property="Foreground" Value="{StaticResource RedBrush}"/>
+    </Style>
+
+    <Style x:Key="PurpleTextBox"
+           TargetType="local:CustomTextBox"
+           BasedOn="{StaticResource BlueTextBox}">
+        <Setter Property="Foreground" Value="{StaticResource PurpleBrush}"/>
+    </Style>
+
 </ResourceDictionary>
