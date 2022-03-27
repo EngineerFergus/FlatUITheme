@@ -6,3 +6,4 @@ Interfaces are important. They represent the points where two systems, entities,
 - [Slider Checkbox](https://stackoverflow.com/questions/56615366/slider-button-checkbox-using-controltemplate-with-slider-click-doesnt-chan)
 - [Attached Properties](https://stackoverflow.com/questions/3188582/template-binding-to-background-and-foreground-colors)
 - [Modern Flat UI Video](https://www.youtube.com/watch?v=PzP8mw7JUzI&t=1169s)
+- [Custom Dependency Properties](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/properties/custom-dependency-properties?view=netdesktop-6.0)
