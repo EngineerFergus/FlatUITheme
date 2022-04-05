@@ -45,12 +45,9 @@
                 <RadioButton x:Name="TextBoxMenuButton"
                          Content="Text Boxes"
                          Style="{StaticResource GreenLabelRadioButton}"/>
-                <RadioButton x:Name="MenusMenuButton"
-                         Content="Menus"
+                <RadioButton x:Name="GridsMenuButton"
+                         Content="Grids"
                          Style="{StaticResource RedLabelRadioButton}"/>
-                <RadioButton x:Name="ChartsMenuButtonTwo"
-                         Content="Charts"
-                         Style="{StaticResource PurpleLabelRadioButton}"/>
             </StackPanel>
         </Border>
 
